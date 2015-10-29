@@ -1,4 +1,4 @@
-class MovieController < ApplicationController
+class MoviesController < ApplicationController
 
   def index
     @list_of_movies = Movie.all
@@ -7,7 +7,7 @@ class MovieController < ApplicationController
 def show
     @movie = Movie.find_by({ :id => params[:id]})
     @movie_title = @movie.title
-    @movie_year = @movie.caption
+    @movie_year = @movie.year
     @movie_duration = @movie.duration
     @movie_description = @movie.description
     @movie_url = @movie.image_url

@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20151029043018) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "directots", force: :cascade do |t|
+  create_table "directors", force: :cascade do |t|
     t.string   "name"
     t.text     "bio"
     t.string   "dob"

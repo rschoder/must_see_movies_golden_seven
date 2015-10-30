@@ -4,12 +4,11 @@ class ActorsController < ApplicationController
     @list_of_actors = Actor.all
   end
 
-def show
+  def show
     @actor = Actor.find_by({ :id => params[:id]})
-    @actor_title = @actor.title
-    @actor_year = @actor.year
-    @actor_duration = @actor.duration
-    @actor_description = @actor.description
+    @actor_name = @actor.name
+    @actor_bio = @actor.bio
+    @actor_dob = @actor.dob
     @actor_url = @actor.image_url
   end
 
@@ -17,13 +16,12 @@ def show
   end
 
   def create_row
-    m = Actor.new
-    m.title = params[:title]
-    m.year = params[:year]
-    m.duration = params[:duration]
-    m.description = params[:description]
-    m.url = params[:url]
-    m.save
+    d = Actor.new
+    d.name = params[:name]
+    d.bio = params[:bio]
+    d.dob = params[:dob]
+    d.url = params[:url]
+    d.save
     redirect_to("http://localhost:3000")
   end
 
@@ -39,10 +37,9 @@ def show
 
   def update_row
     @edit = Actor.find_by({ :id => params[:id]})
-    @edit.title = params[:title]
-    @edit.year = params[:year]
-    @edit.duration = params[:duration]
-    @edit.description = params[:description]
+    @edit.name = params[:name]
+    @edit.bio = params[:bio]
+    @edit.dob = params[:dob]
     @edit.url = params[:url]
     @edit.save
     redirect_to("http://localhost:3000/actors")

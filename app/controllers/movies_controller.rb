@@ -47,4 +47,5 @@ def show
     @edit.save
     redirect_to("http://localhost:3000/movies")
   end
+
 end

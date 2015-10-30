@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   get("/movies",           { :controller => "movies", :action => "index" })
   get("/movies/:id",       { :controller => "movies", :action => "show" })
 
+#DIRECTORS
 
-
-  get("/", { :controller => "directors", :action => "index" })
+  get("/directors", { :controller => "directors", :action => "index" })
 
   #Routes to CREATE directors
   get("/directors/new", { :controller => "directors", :action => "new_form"})
@@ -38,7 +38,32 @@ Rails.application.routes.draw do
 
   # Routes to READ directors
   get("/directors",           { :controller => "directors", :action => "index" })
+
   get("/directors/:id",       { :controller => "directors", :action => "show" })
+
+
+#ACTORS
+
+get("/actors", { :controller => "actors", :action => "index" })
+
+  #Routes to CREATE actors
+  get("/actors/new", { :controller => "actors", :action => "new_form"})
+
+  get("/create_actor", { :controller => "actors", :action => "create_row"})
+
+  #routes to DELETE actors
+  get("/delete_actor/:id", { :controller => "actors", :action => "delete_movie"})
+
+  #routes to EDIT actors
+  get("/actors/:id/edit", { :controller => "actors", :action => "edit_form" })
+
+  get("/update_actor/:id", { :controller => "actors", :action => "update_row" })
+
+  # Routes to READ actors
+  get("/actors",           { :controller => "actors", :action => "index" })
+
+  get("/actors/:id",       { :controller => "actors", :action => "show" })
+
 
 
 end

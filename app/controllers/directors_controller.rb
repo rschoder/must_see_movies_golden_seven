@@ -4,7 +4,7 @@ class DirectorsController < ApplicationController
     @list_of_directors = Director.all
   end
 
-def show
+  def show
     @director = Director.find_by({ :id => params[:id]})
     @director_name = @director.name
     @director_bio = @director.bio
